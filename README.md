@@ -1,44 +1,29 @@
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/we-promise/sure)
-[![View performance data on Skylight](https://badges.skylight.io/typical/s6PEZSKwcklL.svg)](https://oss.skylight.io/app/applications/s6PEZSKwcklL)
-[![Dosu](https://raw.githubusercontent.com/dosu-ai/assets/main/dosu-badge.svg)](https://app.dosu.dev/a72bdcfd-15f5-4edc-bd85-ea0daa6c3adc/ask)
-[![Pipelock Security Scan](https://github.com/we-promise/sure/actions/workflows/pipelock.yml/badge.svg)](https://github.com/we-promise/sure/actions/workflows/pipelock.yml)
+# Fire Hub — Personal FI Dashboard
 
-<img width="1270" height="1140" alt="sure_shot" src="https://github.com/user-attachments/assets/9c6e03cc-3490-40ab-9a68-52e042c51293" />
-
-<p align="center">
-  <!-- Keep these links. Translations will automatically update with the README. -->
-  <a href="https://readme-i18n.com/de/we-promise/sure">Deutsch</a> | 
-  <a href="https://readme-i18n.com/es/we-promise/sure">Español</a> | 
-  <a href="https://readme-i18n.com/fr/we-promise/sure">Français</a> | 
-  <a href="https://readme-i18n.com/ja/we-promise/sure">日本語</a> | 
-  <a href="https://readme-i18n.com/ko/we-promise/sure">한국어</a> | 
-  <a href="https://readme-i18n.com/pt/we-promise/sure">Português</a> | 
-  <a href="https://readme-i18n.com/ru/we-promise/sure">Русский</a> | 
-  <a href="https://readme-i18n.com/zh/we-promise/sure">中文</a>
-</p>
-
-# Sure: The personal finance app for everyone
-
-<b>Get
-involved: [Discord](https://discord.gg/36ZGBsxYEK) • [Website](https://sure.am) • [Issues](https://github.com/we-promise/sure/issues)</b>
+**Fire Hub** is a self-hosted personal finance + Financial Independence (FI) tracker. It is a private fork of [Sure](https://github.com/we-promise/sure), which is itself a community fork of the archived [Maybe Finance](https://github.com/maybe-finance/maybe) project.
 
 > [!IMPORTANT]
-> This repository is a community fork of the now-abandoned Maybe Finance project. <br />
-> Learn more in their [final release](https://github.com/maybe-finance/maybe/releases/tag/v0.6.0) doc.
+> Fire Hub is **not affiliated with or endorsed by Maybe Finance Inc.** or the Sure maintainers. "Maybe" is a trademark of Maybe Finance Inc. and is not used in this fork. Fire Hub is licensed under AGPLv3, consistent with its upstream ancestors.
 
-## Backstory
+## What Fire Hub adds on top of Sure (Phase 3+)
 
-The Maybe Finance team spent most of 2021–2022 building a full-featured personal finance and wealth management app. It even included an “Ask an Advisor” feature that connected users with a real CFP/CFA — all included with your subscription.
+- **Tiered Coverage Dashboard** — Lean FI / Full FI / Fat FI progress bars driven by whether monthly investment distributions cover monthly lifestyle cost.
+- **Per-account distribution breakdown** with TFSA highlighted as the "engine."
+- **FI-specific settings** — target lifestyle cost, tier multipliers, variable-spending lookback window (stored via Sure's `Setting` model).
 
-The business end of things didn't work out, and so they stopped developing the app in mid-2023.
+Phase 1-2 of Fire Hub is pure setup + real-data seeding against vanilla Sure — no code changes. The bespoke FI dashboard arrives in Phase 3, informed by what's genuinely missing after a few weeks of living with Sure's shipped reports (Budgets, InvestmentActivity, RecurringTransactions, Reports).
 
-After spending nearly $1 million on development (employees, contractors, data providers, infra, etc.), the team open-sourced the app. Their goal was to let users self-host it for free — and eventually launch a hosted version for a small fee.
+See `docs/fire-hub/specs/2026-04-24-fire-hub-mvp-design.md` for the canonical spec and `docs/fire-hub/plans/` for implementation plans.
 
-They actually did launch that hosted version … briefly.
+## Hosting
 
-That also didn’t work out — at least not as a sustainable B2C business — so now here we are: hosting a community-maintained fork to keep the codebase alive and see where this can go next.
+Fire Hub is self-hosted. For personal use the target is native Rails on macOS (laptop + Mac mini + Tailscale for remote access). The upstream Docker-based path ([docs/hosting/docker.md](docs/hosting/docker.md)) also works unchanged.
 
-Join us!
+---
+
+## Upstream Sure documentation
+
+The sections below are inherited from Sure and describe the underlying codebase. They remain accurate for Fire Hub since Phase 1-2 is an unmodified fork.
 
 ## Hosting Sure
 
